@@ -3,7 +3,8 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import specialist from 'specialist';
+import process from 'node:process';
+import {parseArgv} from 'specialist';
 import readdir from 'tiny-readdir';
 
 /* HELPERS */
@@ -14,7 +15,7 @@ const Helpers = {
 
   getOptions: (): { ext?: string, root: string, propsRe: RegExp } => {
 
-    const {folder, ext, props} = specialist.parseArgv ( process.argv );
+    const {folder, ext, props} = parseArgv ( process.argv );
     const root = path.resolve ( process.cwd (), folder );
     const propsRe = new RegExp ( `(?<!\\w|\\/\\S*)(${props.replaceAll ( ',', '|' )})(?!\\w)`, 'g' );
     const options = {ext, root, propsRe};
