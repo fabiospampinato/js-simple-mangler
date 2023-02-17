@@ -2,7 +2,7 @@
   "name": "js-simple-mangler",
   "repository": "github:fabiospampinato/js-simple-mangler",
   "description": "A simple JavaScript mangler that works across multiple files.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "main": "dist/index.js",
   "exports": "./dist/index.js",
